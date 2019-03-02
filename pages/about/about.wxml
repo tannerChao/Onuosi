@@ -1,0 +1,53 @@
+<!--logs.wxml-->
+<view class="container about">
+    <view class="header-baner">
+        <image  src="../../assets/image/contcat_us.jpg" mode="scaleToFill"></image>
+    </view>
+    <view class="header-extands theme-background">
+        <text class="title">广州奥斯曼有限公司</text>
+        <textarea class="content">广州奥斯曼有限公司专注于电子电器零配件，多年，集制造、研发、销售于一体。  
+            强大的生产基地，丰富的制造经验，专业的研发队
+            使我们的产品得以全面纵深发展，
+            我们可以满足行业内的各式需求，从根本上保证了
+            我们产品的质量和交货周期
+        </textarea>
+    </view>
+    <view class="header-swiper page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{swipers}}" wx:key="*this">
+            <swiper-item>
+                <image bindtap="bindViewTap" class="home-swipers-items" src="{{item}}" mode="scaleToFill"></image>
+            </swiper-item>  
+          </block>
+        </swiper>
+    </view>
+    <view class="content-extends theme-background">
+        <text class="title">核心价值</text>
+        <textarea class="content">策划：倾听客户的传播需求与目的，并将规划成适宜在空间中呈现的设计策略。
+            设计：拥有多位创意全面经验丰富的资深设计师，提供展览，活动策划，巡展，办公商业空间等全方位创意设计。
+            执行：精确务实的执行力，并不断探索新的材质和施工工艺加以运用，将客户的利益发挥的效果。
+            服务：专属的服务模式，针对个别专案采取团队服务模式，为客户提供专业细微的服务品质。
+            
+            我们成立至今,专业从事展览工作有超过10年的经验,提供全面的各种以展览服务给客户。
+        </textarea>
+    </view>
+
+    <block wx:if="{{news.length>0}}" wx:key="*this">
+        <view class="content-news theme-background">
+            <view class="content-news-header"> 
+              <text class="content-news-title-left">公司资讯</text>
+            </view>
+            <view class="content-news-content">
+              <view class="content-news-menu">
+                  <block wx:for="{{news}}" wx:key="*this">
+                      <view class="content-news-menu-li"> 
+                          <text class="title">{{item.text}}</text>
+                          <text class="time">2019-2-22</text>
+                      </view>
+                  </block>
+              </view>    
+            </view>
+        </view>
+    </block>  
+</view>
